@@ -1,0 +1,125 @@
+//----------------------------------------------------------------------------
+//File name:   calculateMyGPA.cpp
+//Assign ID:   PROG2 
+//Due Date:    01/26/2022
+//
+//Purpose:     Calculate my GPA based on # of A's, B's...F's
+//
+//Author:      hallD241 Daylen Hall
+//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+#include <fstream> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+   //-------------------------------------------------------------------------
+   // Declare variables, ONE PER LINE, with comment.
+   //-------------------------------------------------------------------------
+   
+   int numA,           // number of A's 
+       numB,           // number of B's 
+       numC,           // number of C's 
+       numD,           // number of D's 
+       numF,           // number of F's 
+       creditHours,    // number of credit hours 
+       numCourses;     // number of courses
+       
+   string firstName,   // users first name 
+          lastName;    // users last name 
+         
+   float gpa,            // average gpa 
+         qualityPoints;  // accumalative number of points 
+
+
+   //-|-----------------------------------------------------------------------
+   //-| Display the copyright notice declaring authorship.
+   //-|-----------------------------------------------------------------------
+   
+   cout << "\n\n(c) 2022, hallD241 Daylen Hall" << endl << endl; 
+
+
+   //-|-----------------------------------------------------------------------
+   //-| INPUT(I) SECTION: Read inputs.
+   //-|-----------------------------------------------------------------------
+   //-| 1. Read last name 
+   //-| 2. Read first name
+   //-| 3. Read # of A's 
+   //-| 4. Read # of B's 
+   //-| 5. Read # of C's 
+   //-| 6. Read # of D's 
+   //-| 7. Read # of F's  
+   //-|-----------------------------------------------------------------------
+
+   cout << endl << "Enter First Name: ";
+   cin >> firstName;
+   
+   cout << endl << "Enter Last Name: ";
+   cin >> lastName;
+
+   cout << endl << "Enter #As: "; 
+   cin >> numA;
+
+   cout << endl << "Enter #Bs: "; 
+   cin >> numB;
+
+   cout << endl << "Enter #Cs: "; 
+   cin >> numC;
+
+   cout << endl << "Enter #Ds: "; 
+   cin >> numD;
+
+   cout << endl << "Enter #Fs: "; 
+   cin >> numF;
+
+
+   //-|-----------------------------------------------------------------------
+   //-| PROCESS(P) SECTION: Perform calculation(s).
+   //-|-----------------------------------------------------------------------
+   //-| 8. Compute nCourses = numA + numB + numC + numD + numF
+   //-| 9. Compute creditHours = (numCourses * 3)
+   //-| 10. Compute qualityPoints = (numA * 4) + (numB *3) + (numC * 2) + (numD * 1) + (numF * 0)
+   //-| 11. COmpute gpa = qualityPoints / numCourses
+   //-|-----------------------------------------------------------------------
+
+   numCourses = numA + numB + numC + numD + numF;
+
+   creditHours = (numCourses * 3);
+
+   qualityPoints = (numA * 4) + (numB *3) + (numC * 2) + (numD * 1) + (numF * 0);
+
+   gpa = qualityPoints / numCourses;
+
+   //-|-----------------------------------------------------------------------
+   //-| OUTPUT(O) SECTION: Display outputs. 
+   //-|-----------------------------------------------------------------------
+   //-| 12. Display lastName 
+   //-| 13. Display firstName  
+   //-| 14. Dislay numCourses
+   //-| 15. Display creditHours 
+   //-| 16. Display gpa 
+   //-|-----------------------------------------------------------------------
+
+   cout << fixed << setprecision(2) << showpoint;  
+
+   cout << endl << "STUDENT " << lastName << ", " << firstName << "    ";
+
+   cout << "#Courses = " << numCourses << "    ";
+
+   cout << "Credit Hours = " << creditHours << "    "; 
+
+   cout << "GPA = " << gpa << " "; 
+
+   //-|-----------------------------------------------------------------------
+   //-| Display the copyright notice declaring authorship again.
+   //-|-----------------------------------------------------------------------
+   cout << "\n\n(c) 2022, hallD241 Daylen Hall" << endl << endl; 
+
+
+   return 0;
+
+}//main
